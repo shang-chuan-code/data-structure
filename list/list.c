@@ -3,6 +3,5 @@
 static void add_tail()
 {
 
-
-    
+  return;
 }
