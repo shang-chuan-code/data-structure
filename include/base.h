@@ -11,14 +11,20 @@
 
 /****************宏定义***************/
 
-#define S_OK           1
-#define S_FAILED       0
+
+
+#define MENU_MAX_OUTPUT  1024
+#define S_OK              1
+#define S_FAILED          0 
  
+
+#define  LOG_PRINTF(fmt, ...) printf("[%s]"fmt, _func_, __VA_ARGS__)
 
 /****************结构体定义***************/ 
 
 
 /****************函数声明***************/ 
-
+int base_getchar(char * ch);
+int base_getnum(int* num);
 
 #endif

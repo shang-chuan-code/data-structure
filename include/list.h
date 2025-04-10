@@ -5,7 +5,6 @@
 
 /****************宏定义***************/
 
- 
 
 /****************结构体定义***************/ 
 typedef struct node
@@ -17,8 +16,7 @@ typedef struct node
 
 /****************函数声明***************/ 
 
-
-
-
+void add_tail(Node** head, int data);
+void printf_list(Node* head);
 
 #endif
