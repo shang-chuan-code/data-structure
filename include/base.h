@@ -21,7 +21,8 @@
 #define MENU_MAX_OUTPUT  1024
 #define S_OK              1
 #define S_FAILED          0 
- 
+#define S_TRUE            1
+#define S_FALSE          -1
 
 #define  LOG_PRINTF(fmt, ...) printf("[%s]"fmt, _func_, __VA_ARGS__)
 
