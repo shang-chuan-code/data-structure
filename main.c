@@ -2,12 +2,13 @@
  * @Author: shangchuan shangchuan97@163.com
  * @Date: 2025-04-09 18:27:20
  * @LastEditors: shangchuan shangchuan97@163.com
- * @LastEditTime: 2025-04-11 22:26:14
+ * @LastEditTime: 2025-04-14 21:43:48
  * @FilePath: \data-structure\main.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "base.h"
 #include "list_test.h"
+#include "stack_test.h"
 
 
 int main(int argc, char *arg[])
@@ -28,7 +29,7 @@ int main(int argc, char *arg[])
     //     }
     // }
 
-    unit_test_list();
+    unit_test_stack();
     
     if(strcmp(arg[1], "list") == 0)
     {
@@ -36,7 +37,7 @@ int main(int argc, char *arg[])
     }
     else if (strcmp(arg[1], "stack") == 0)
     {
-
+        unit_test_stack();
     }
     else
     {

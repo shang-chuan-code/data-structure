@@ -1,5 +1,5 @@
-#ifndef _LIST_TEST_
-#define _LIST_TEST_
+#ifndef _STACK_TEST_
+#define _STACK_TEST_
 
 
 /****************宏定义***************/
@@ -10,7 +10,7 @@
 
 /****************函数声明***************/ 
 
-int unit_test_list();
+int unit_test_stack();
 
 
 

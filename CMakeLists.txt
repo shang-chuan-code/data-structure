@@ -9,6 +9,8 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/list SRC_LIST)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/base SRC_LIST)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/stack SRC_LIST)
+
 
 aux_source_directory(${CMAKE_SOURCE_DIR}/demo SRC_LIST)
 aux_source_directory(${CMAKE_SOURCE_DIR} SRC_LIST)
