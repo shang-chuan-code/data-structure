@@ -2,7 +2,7 @@
  * @Author: shangchuan shangchuan97@163.com
  * @Date: 2025-04-13 21:57:58
  * @LastEditors: shangchuan shangchuan97@163.com
- * @LastEditTime: 2025-04-14 22:16:32
+ * @LastEditTime: 2025-04-15 23:35:29
  * @FilePath: \data-structure\src\stack\stack.c
  */
 #include "base.h"
@@ -75,7 +75,7 @@ int seqstack_push(Seqstack* st, dataType* data)
  * @param {Seqstack*} st
  * @return {*}
  */
-int seqstack_pull(Seqstack* st)
+int seqstack_pop(Seqstack* st)
 {
     if(S_TRUE == seqstack_isempty(st))
     {
@@ -118,5 +118,119 @@ int seqstack_print(Seqstack* st)
     {
         printf("stack data[%d] = %d\n", i, *(int *)(st->data + i));
     }
+    return S_OK;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                     链式栈                                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @description: 链式栈判断是否为空
+ * @param {Stack*} st
+ * @return {*}
+ */
+static int stack_isempty(Stack* st)
+{
+    return (NULL == st->top ? S_TRUE : S_FALSE);
+} 
+
+/**
+ * @description: 链式栈初始化
+ * @param {Stack*} st
+ * @return {*}
+ */
+int stack_init(Stack** st) 
+{
+    if(NULL ==  *st)
+    { 
+        Stack* stack = (Stack*)malloc(sizeof(Stack));
+        stack->size = 0;
+        stack->top = NULL;
+        *st = stack;
+    }
+}
+
+/**
+ * @description: 链式栈入栈
+ * @param {Stack*} st
+ * @return {*}
+ */
+int stack_push(Stack* st, int data)
+{
+    Node* node = (Node *)malloc(sizeof(Node));
+    node->data = data;
+    node->next = NULL;
+
+    node->next = st->top;
+    st->top = node;
+    st->size++;  
+    
+    return S_OK;
+}
+
+
+/**
+ * @description: 链式栈出栈
+ * @param {Stack*} st
+ * @return {*}
+ */
+int stack_pop(Stack* st)
+{
+    if(S_TRUE == stack_isempty(st))
+    {
+        printf("stack is empty\n");
+        return S_FAILED;
+    }
+    
+    Node *temp = st->top;
+    st->top = temp->next;
+    st->size --;
+    free(temp);
+
+    return S_OK;
+}
+
+/**
+ * @description:链式栈查看栈顶 
+ * @param {Stack*} st
+ * @param {int*} data
+ * @return {*}
+ */
+int stack_peek(Stack* st, int* data)
+{
+    if(S_TRUE == stack_isempty(st))
+    {
+        printf("stack is empty\n");
+        return S_FAILED;
+    }
+     
+    *data = st->top->data;
+    return S_OK;
+}
+
+/**
+ * @description: 链式栈打印
+ * @param {Stack*} st
+ * @return {*}
+ */
+int stack_printf(Stack* st)
+{
+    if(S_TRUE == stack_isempty(st))
+    {
+        printf("stack is empty\n");
+        return S_FAILED;
+    }
+
+    Node *temp = st->top; 
+
+    //此处应注意
+    while (NULL != temp)  
+    {
+        printf("stack data = %d\n", temp->data);
+        temp = temp->next;
+    }
+    
     return S_OK;
 }
