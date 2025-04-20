@@ -11,6 +11,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/list SRC_LIST)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/base SRC_LIST)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/stack SRC_LIST)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/queue SRC_LIST)
 
 add_library(data_structure SHARED ${SRC_LIST})
 add_library(data_structure_static STATIC ${SRC_LIST})
